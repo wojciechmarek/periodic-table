@@ -1,7 +1,7 @@
 {
-  "name": "periodic-table",
+  "name": "pt-web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/periodic-table/src",
+  "sourceRoot": "apps/pt-web/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/periodic-table"
+        "outputPath": "dist/apps/pt-web"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "periodic-table:build"
+        "buildTarget": "pt-web:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "periodic-table:build:development",
+          "buildTarget": "pt-web:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "periodic-table:build:production",
+          "buildTarget": "pt-web:build:production",
           "hmr": false
         }
       }
@@ -41,36 +41,36 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "periodic-table:build"
+        "buildTarget": "pt-web:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "periodic-table:build:development"
+          "buildTarget": "pt-web:build:development"
         },
         "production": {
-          "buildTarget": "periodic-table:build:production"
+          "buildTarget": "pt-web:build:production"
         }
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/periodic-table"],
+      "outputs": ["coverage/apps/pt-web"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/periodic-table"
+        "reportsDirectory": "../../coverage/apps/pt-web"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/periodic-table/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/pt-web/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "periodic-table:build"
+        "buildTarget": "pt-web:build"
       }
     }
   },
