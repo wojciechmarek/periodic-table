@@ -17,11 +17,13 @@
     "paths": {
       "@periodic-table/data-access": ["libs/data-access/src/index.ts"],
       "@periodic-table/feature/details": ["libs/feature/details/src/index.ts"],
+      "@periodic-table/feature/layout": ["libs/feature/layout/src/index.ts"],
       "@periodic-table/feature/search-bar": [
         "libs/feature/search-bar/src/index.ts"
       ],
       "@periodic-table/feature/table": ["libs/feature/table/src/index.ts"],
       "@periodic-table/ui/details": ["libs/ui/details/src/index.ts"],
+      "@periodic-table/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@periodic-table/ui/search-bar": ["libs/ui/search-bar/src/index.ts"],
       "@periodic-table/ui/table": ["libs/ui/table/src/index.ts"]
     }
