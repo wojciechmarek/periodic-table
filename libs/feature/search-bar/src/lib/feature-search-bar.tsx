@@ -1,18 +1,62 @@
 import styled from '@emotion/styled';
 
 /* eslint-disable-next-line */
-export interface FeatureSearchBarProps {}
+export interface SearchBarProps { }
 
-const StyledFeatureSearchBar = styled.div`
-  color: pink;
+const SearchBarContainer = styled.div`
+  height: 3em;
+  width: 100%;
+  background-color: #26323A;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 0 1em;
 `;
 
-export function FeatureSearchBar(props: FeatureSearchBarProps) {
+const Title = styled.h1`
+  color: white;
+  font-size: 1.25rem;
+`;
+
+const Search = styled.div`
+  height: 2em;
+  width: 25em;
+  background-color: #2D3940;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  gap: 0.5em;
+
+`;
+
+
+const Info = styled.div`
+  width: 10em;
+  background-color: #26323A;
+  display: flex;
+  justify-content: end;
+`;
+
+export function SearchBar(props: SearchBarProps) {
   return (
-    <StyledFeatureSearchBar>
-      <h1>Welcome to FeatureSearchBar!</h1>
-    </StyledFeatureSearchBar>
+    <SearchBarContainer>
+      <Title>The periodic table</Title>
+      <Search>
+        <span
+          role='img'
+          aria-label='search'
+        >🔍</span>
+        <p>Search...</p>
+      </Search>
+      <Info>
+        <span
+          role='img'
+          aria-label='info'
+        >ℹ️</span>
+      </Info>
+    </SearchBarContainer>
   );
 }
-
-export default FeatureSearchBar;

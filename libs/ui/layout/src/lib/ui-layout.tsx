@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 /* eslint-disable-next-line */
-export interface UiLayoutProps {}
+export interface UiLayoutProps { }
 
 const StyledUiLayout = styled.div`
   color: pink;
@@ -14,5 +14,3 @@ export function UiLayout(props: UiLayoutProps) {
     </StyledUiLayout>
   );
 }
-
-export default UiLayout;

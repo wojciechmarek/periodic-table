@@ -1,16 +1,9 @@
-import styled from '@emotion/styled';
-
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { Global } from '@emotion/react';
+import { Layout } from '@periodic-table/feature/layout';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="pt-web" />
-    </StyledApp>
+    <Layout />
   );
 }
 
