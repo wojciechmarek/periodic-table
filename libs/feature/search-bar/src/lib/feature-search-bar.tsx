@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Search as SearchIcon, Info as InfoIcon } from 'lucide-react';
 
 /* eslint-disable-next-line */
 export interface SearchBarProps { }
@@ -29,7 +30,6 @@ const Search = styled.div`
   color: #fff;
   font-weight: bold;
   gap: 0.5em;
-
 `;
 
 
@@ -38,6 +38,7 @@ const Info = styled.div`
   background-color: #26323A;
   display: flex;
   justify-content: end;
+  color: #fff;
 `;
 
 export function SearchBar(props: SearchBarProps) {
@@ -48,14 +49,16 @@ export function SearchBar(props: SearchBarProps) {
         <span
           role='img'
           aria-label='search'
-        >🔍</span>
+        >
+          <SearchIcon size={16} />
+        </span>
         <p>Search...</p>
       </Search>
       <Info>
         <span
           role='img'
           aria-label='info'
-        >ℹ️</span>
+        ><InfoIcon size={16} /></span>
       </Info>
     </SearchBarContainer>
   );
