@@ -1,18 +1,21 @@
 import styled from '@emotion/styled';
 
 /* eslint-disable-next-line */
-export interface FeatureDetailsProps {}
-
-const StyledFeatureDetails = styled.div`
-  color: pink;
-`;
-
-export function FeatureDetails(props: FeatureDetailsProps) {
-  return (
-    <StyledFeatureDetails>
-      <h1>Welcome to FeatureDetails!</h1>
-    </StyledFeatureDetails>
-  );
+export interface DetailsProps {
+  [key: string]: any;
 }
 
-export default FeatureDetails;
+const DetailsContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  background-color: #2c485a;
+`;
+
+export function Details(props: DetailsProps) {
+  const { ...rest } = props;
+  return (
+    <DetailsContainer {...rest}>
+      <h1>Welcome to Details!</h1>
+    </DetailsContainer>
+  );
+}

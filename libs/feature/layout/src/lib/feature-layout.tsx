@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import { Details } from '@periodic-table/feature/details';
 import { SearchBar } from '@periodic-table/feature/search-bar';
+import { Table } from '@periodic-table/feature/table';
 
 /* eslint-disable-next-line */
 export interface LayoutProps { }
@@ -14,9 +16,9 @@ const LayoutContainer = styled.div`
 
 const LayoutMainContent = styled.div`
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  /* grid-template-columns: 2fr 1fr;
+  grid-gap: 1em; */
 `;
 
 
@@ -25,7 +27,8 @@ export function Layout(props: LayoutProps) {
     <LayoutContainer>
       <SearchBar />
       <LayoutMainContent>
-        <h1>Welcome to Layout!</h1>
+        <Table />
+        {/* <Details /> */}
       </LayoutMainContent>
     </LayoutContainer>
   );
