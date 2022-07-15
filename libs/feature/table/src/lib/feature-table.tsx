@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import { usePeriodicTableApi } from '@periodic-table/data-access';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
 
@@ -72,60 +74,60 @@ const AtomWeight = styled.p`
 export function Table(props: TableProps) {
   const { ...rest } = props;
 
-  const [atoms, setAtoms] = useState([]);
+  const { getPeriodicTable } = usePeriodicTableApi();
 
-  fetch('https://raw.githubusercontent.com/neelpatel05/periodic-table-api-go/master/data.json')
-    .then((response) => response.json())
-    .then((data) => {
-      const convertedAtoms = Array.from({ length: 118 }, (_, i) => {
-        if (i > 55 && i < 70) {
-          return null;
-        }
+  // fetch('https://raw.githubusercontent.com/neelpatel05/periodic-table-api-go/master/data.json')
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     const convertedAtoms = Array.from({ length: 118 }, (_, i) => {
+  //       if (i > 55 && i < 70) {
+  //         return null;
+  //       }
 
-        if (i > 87 && i < 102) {
-          return null;
-        }
+  //       if (i > 87 && i < 102) {
+  //         return null;
+  //       }
 
-        let extraClass = '';
+  //       let extraClass = '';
 
-        switch (i) {
-          case 0:
-            extraClass = 'row-1-space';
-            break;
+  //       switch (i) {
+  //         case 0:
+  //           extraClass = 'row-1-space';
+  //           break;
 
-          case 3:
-            extraClass = 'row-2-space';
-            break;
+  //         case 3:
+  //           extraClass = 'row-2-space';
+  //           break;
 
-          case 11:
-            extraClass = 'row-3-space';
-            break;
+  //         case 11:
+  //           extraClass = 'row-3-space';
+  //           break;
 
-          default:
-            break;
-        }
+  //         default:
+  //           break;
+  //       }
 
-        return {
-          id: i + 1,
-          name: data[i]?.symbol,
-          weight: data[i]?.atomicMass,
-          color: data[i]?.cpkHexColor,
-          extraClass
-        }
-      }).filter((atom) => atom !== null);
+  //       return {
+  //         id: i + 1,
+  //         name: data[i]?.symbol,
+  //         weight: data[i]?.atomicMass,
+  //         color: data[i]?.cpkHexColor,
+  //         extraClass
+  //       }
+  //     }).filter((atom) => atom !== null);
 
-      setAtoms(convertedAtoms);
-    });
+  //     setAtoms(convertedAtoms);
+  //   });
 
 
   return (
     <TableContainer {...rest}>
       <PeriodicTable>
-        {atoms?.map((atom) => (
-          <Atom className={atom?.extraClass} key={atom?.id} color={`#${atom?.color}`}>
-            <AtomNumber>{atom?.id}</AtomNumber>
-            <AtomSymbol>{atom?.name}</AtomSymbol>
-            <AtomWeight>{atom?.weight}</AtomWeight>
+        {getPeriodicTable.data?.map((atom) => (
+          <Atom className={atom?.name} key={atom?.name} color={`#${atom?.cpkHexColor}`}>
+            <AtomNumber>{atom?.atomicNumber}</AtomNumber>
+            <AtomSymbol>{atom?.symbol}</AtomSymbol>
+            <AtomWeight>{atom?.yearDiscovered}</AtomWeight>
 
           </Atom>
         ))}
