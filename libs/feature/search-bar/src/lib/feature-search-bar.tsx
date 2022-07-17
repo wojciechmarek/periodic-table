@@ -14,6 +14,10 @@ const SearchBarContainer = styled.div`
   padding: 0 1em;
 `;
 
+const TitleLink = styled.a`
+  text-decoration: none;
+`;
+
 const Title = styled.h1`
   color: white;
   font-size: 1.25rem;
@@ -30,22 +34,31 @@ const Search = styled.div`
   color: #fff;
   font-weight: bold;
   gap: 0.5em;
+
+  :hover {
+    cursor: pointer;
+    background-color: #313e46;
+  }
 `;
 
 
-const Info = styled.div`
+const Info = styled.button`
   width: 10em;
   background-color: #26323A;
   display: flex;
   justify-content: end;
   color: #fff;
+  cursor: pointer;
+  border: none;
 `;
 
 export function SearchBar(props: SearchBarProps) {
   return (
     <SearchBarContainer>
-      <Title>The periodic table</Title>
-      <Search>
+      <TitleLink href='/'>
+        <Title>The periodic table</Title>
+      </TitleLink>
+      <Search onClick={() => console.log('search clicked')}>
         <span
           role='img'
           aria-label='search'
@@ -54,7 +67,7 @@ export function SearchBar(props: SearchBarProps) {
         </span>
         <p>Search...</p>
       </Search>
-      <Info>
+      <Info onClick={() => console.log('info clicked')}>
         <span
           role='img'
           aria-label='info'
