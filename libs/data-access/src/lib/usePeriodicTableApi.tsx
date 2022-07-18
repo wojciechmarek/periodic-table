@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { Atom } from "./models/atom"
+import { Atom } from '@periodic-table/model';
 
 export const usePeriodicTableApi = () => {
   const getPeriodicTable = useQuery<Atom[]>({
@@ -7,6 +7,6 @@ export const usePeriodicTableApi = () => {
     queryFn: () => fetch('https://raw.githubusercontent.com/neelpatel05/periodic-table-api-go/master/data.json').then((response) => response.json())
   })
 
-  return { getPeriodicTable }
+  return { periodicTableAtoms: getPeriodicTable.data }
 }
 

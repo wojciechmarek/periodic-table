@@ -22,6 +22,7 @@
         "libs/feature/search-bar/src/index.ts"
       ],
       "@periodic-table/feature/table": ["libs/feature/table/src/index.ts"],
+      "@periodic-table/model": ["libs/model/src/index.ts"],
       "@periodic-table/ui/details": ["libs/ui/details/src/index.ts"],
       "@periodic-table/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@periodic-table/ui/search-bar": ["libs/ui/search-bar/src/index.ts"],
