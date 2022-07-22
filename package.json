@@ -2,7 +2,10 @@
   "name": "@periodic-table/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx npx pt-web:serve",
+    "build": "nx npx pt-web:build"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "11.11.1",

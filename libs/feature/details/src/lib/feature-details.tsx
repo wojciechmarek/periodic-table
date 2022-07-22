@@ -24,8 +24,8 @@ export function Details(props: DetailsProps) {
         </CloseButton>
       </CloseButtonRow>
       <SymbolAndNameRow>
-        <AtomSymbol>{atom.symbol}</AtomSymbol>
-        <AtomFullName>{atom.name}</AtomFullName>
+        <AtomSymbol>{atom?.symbol}</AtomSymbol>
+        <AtomFullName>{atom?.name}</AtomFullName>
       </SymbolAndNameRow>
       <DescriptionRow>
         <Description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque quidem debitis consequuntur fugiat odit aliquid labore quo, at exercitationem eum molestias, soluta provident, consequatur sit. Minima ea ipsam asperiores dolor.</Description>
