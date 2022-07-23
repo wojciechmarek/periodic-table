@@ -1,22 +1,24 @@
 # Periodic Table
 
-This is a per
+A modern and clean periodic table of elements,
 
 ## Purpose
 
-To brush up my frontend skills 🔥.
+To brush up my frontend skills 🔥 and learn CSS grid, emotion, react-query and NX.
 
 ## Demo
 
-A live demo is available at [not yet](www.github.com/).
+A live demo is available at [https://periodic-table-alpha.vercel.app/](https://periodic-table-alpha.vercel.app/).
 
 ## Screenshot
+
+soon...
 
 ## Used technologies
 
 - 🎁 **Repository:** mono-repository by NX
 - 🌈 **Framework:** react
-- 🛠️ **Tools:** react-router
+- 🛠️ **Tools:** react-query
 - 🎨 **Styling:** styled-components by emotion, lucide icons
 - 💎 **Others:** desktop-first approach, progressive web app
 
