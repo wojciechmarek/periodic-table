@@ -29,7 +29,7 @@ export function Table(props: TableProps) {
     <TableContainer {...rest}>
       <PeriodicTable>
         {atoms?.map((atom, index) => (
-          <AtomComp className={generateSpecialClasses(index)} key={atom?.name} color={`#${atom?.cpkHexColor}`} onClick={() => onAtomClick(atom)}>
+          <AtomComp className={generateSpecialClasses(index)} key={atom?.name} onClick={() => onAtomClick(atom)}>
             <AtomNumber>{atom?.atomicNumber}</AtomNumber>
             <AtomSymbol>{atom?.symbol}</AtomSymbol>
             <AtomWeight>{atom?.yearDiscovered}</AtomWeight>

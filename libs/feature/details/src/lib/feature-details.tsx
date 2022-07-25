@@ -1,6 +1,6 @@
 import { Atom } from '@periodic-table/model';
 import { XCircle } from 'lucide-react';
-import { AtomFullName, AtomSymbol, CloseButton, CloseButtonRow, Description, DescriptionRow, DetailsContainer, DetailsRow, Label, Row, SymbolAndNameRow, Value } from './feature-details.styled';
+import { AtomFullName, AtomSymbol, CloseButton, CloseButtonRow, CpkColor, Description, DescriptionRow, DetailsContainer, DetailsRow, Label, Row, SymbolAndNameRow, Value } from './feature-details.styled';
 
 /* eslint-disable-next-line */
 export interface DetailsProps {
@@ -32,12 +32,16 @@ export function Details(props: DetailsProps) {
       </DescriptionRow>
       <DetailsRow>
         <Row>
-          <Label>Number</Label>
+          <Label>Atomic number</Label>
           <Value>{atom?.atomicNumber}</Value>
         </Row>
         <Row>
           <Label>Mass</Label>
           <Value>{atom?.atomicMass}</Value>
+        </Row>
+        <Row>
+          <Label>CPK color</Label>
+          <CpkColor color={atom?.cpkHexColor ?? "000"} />
         </Row>
         <Row>
           <Label>Density</Label>

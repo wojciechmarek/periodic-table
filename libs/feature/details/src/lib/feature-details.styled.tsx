@@ -78,3 +78,12 @@ export const Value = styled.span`
   color: white;
   font-size: 1rem;
 `;
+
+export const CpkColor = styled.div<{
+  color: string;
+}>`
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background-color: #${({ color }) => color};
+`;
