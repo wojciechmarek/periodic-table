@@ -6,6 +6,7 @@ export const DetailsContainer = styled.div`
   padding: 1em;
   display: flex;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const CloseButtonRow = styled.div`

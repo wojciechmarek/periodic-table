@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
-import { Atom } from '@periodic-table/model';
-import { Atom as AtomComp, AtomNumber, AtomSymbol, AtomWeight, PeriodicTable, TableContainer } from './feature-table.styled';
-
+import { Atom, atomGroupToColor } from '@periodic-table/model';
+import { Atom as AtomComp, AtomNumber, AtomSymbol, AtomWeight, PeriodicSummary, PeriodicTable, SummaryColorDot, SummaryItem, SummaryText, TableContainer } from './feature-table.styled';
 
 /* eslint-disable-next-line */
 export interface TableProps {
@@ -23,13 +22,25 @@ export function Table(props: TableProps) {
 
   const onAtomClick = useCallback((atom: Atom) => {
     handleOnAtomClick(atom);
+
+    const groups = atoms.map((atom) => atom.groupBlock);
+    const uniqueGroups = [...new Set(groups)];
+    console.log(uniqueGroups);
   }, [handleOnAtomClick]);
 
   return (
     <TableContainer {...rest}>
+      <PeriodicSummary>
+        {Array.from({ length: 9 }, (_, i) => i + 1).map((id) => (
+          <SummaryItem key={id}>
+            <SummaryColorDot color={Array.from(atomGroupToColor.values())[id - 1]} />
+            <SummaryText>{Array.from(atomGroupToColor.keys())[id - 1]}</SummaryText>
+          </SummaryItem>
+        ))}
+      </PeriodicSummary>
       <PeriodicTable>
         {atoms?.map((atom, index) => (
-          <AtomComp className={generateSpecialClasses(index)} key={atom?.name} onClick={() => onAtomClick(atom)}>
+          <AtomComp className={generateSpecialClasses(index)} key={atom?.name} onClick={() => onAtomClick(atom)} color={atomGroupToColor.get(atom?.groupBlock)}>
             <AtomNumber>{atom?.atomicNumber}</AtomNumber>
             <AtomSymbol>{atom?.symbol}</AtomSymbol>
             <AtomWeight>{atom?.yearDiscovered}</AtomWeight>

@@ -4,6 +4,42 @@ export const TableContainer = styled.div`
   height: 100%;
   padding: 1em;
   overflow: scroll;
+  position: relative;
+`;
+
+export const PeriodicSummary = styled.div`
+  position: absolute;
+  height: 10em;
+  width: 30em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  top: 1em;
+  left: 14.5em;
+`;
+
+export const SummaryItem = styled.div`
+  width: 100%;
+  padding: 0.125em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+`;
+
+export const SummaryColorDot = styled.div<{
+  color: string;
+}>`
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+`;
+
+export const SummaryText = styled.p`
+  color: white;
+  font-size: 1rem;
+  margin-left: 1em;
+  font-weight: bold;
+  text-transform: capitalize;
 `;
 
 export const PeriodicTable = styled.div`
