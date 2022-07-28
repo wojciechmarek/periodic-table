@@ -30,18 +30,28 @@ export const SymbolAndNameRow = styled.div`
 
 export const DescriptionRow = styled.div`
   margin-top: 1em;
+  display: flex;
+  flex-direction: column;
   
 `;
 
 export const Description = styled.p`
   color: white;
-  font-size: 0.75rem;
+  font-size: 1rem;
   text-align: justify;
   text-justify: inter-word;
   width: 100%;
   overflow-y: auto;
   height: 100%;
   padding-right: 1em;
+  padding: 0;
+`;
+
+export const ReadMoreLink = styled.a`
+  color: #ffffff70;
+  font-size: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 export const AtomSymbol = styled.h2`

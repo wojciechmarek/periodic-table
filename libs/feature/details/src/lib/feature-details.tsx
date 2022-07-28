@@ -1,6 +1,6 @@
 import { Atom } from '@periodic-table/model';
 import { XCircle } from 'lucide-react';
-import { AtomFullName, AtomSymbol, CloseButton, CloseButtonRow, CpkColor, Description, DescriptionRow, DetailsContainer, DetailsRow, Label, Row, SymbolAndNameRow, Value } from './feature-details.styled';
+import { AtomFullName, AtomSymbol, CloseButton, CloseButtonRow, CpkColor, Description, DescriptionRow, DetailsContainer, DetailsRow, Label, ReadMoreLink, Row, SymbolAndNameRow, Value } from './feature-details.styled';
 
 /* eslint-disable-next-line */
 export interface DetailsProps {
@@ -29,6 +29,7 @@ export function Details(props: DetailsProps) {
       </SymbolAndNameRow>
       <DescriptionRow>
         <Description>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque quidem debitis consequuntur fugiat odit aliquid labore quo, at exercitationem eum molestias, soluta provident, consequatur sit. Minima ea ipsam asperiores dolor.</Description>
+        <ReadMoreLink href={`https://en.wikipedia.org/wiki/${atom?.name}`} target="_blank">Read more</ReadMoreLink>
       </DescriptionRow>
       <DetailsRow>
         <Row>
@@ -37,24 +38,41 @@ export function Details(props: DetailsProps) {
         </Row>
         <Row>
           <Label>Mass</Label>
-          <Value>{atom?.atomicMass}</Value>
-        </Row>
-        <Row>
-          <Label>CPK color</Label>
-          <CpkColor color={atom?.cpkHexColor ?? "000"} />
+          <Value>{atom?.atomicMass} ma</Value>
         </Row>
         <Row>
           <Label>Density</Label>
-          <Value>{atom?.density}</Value>
+          <Value>{atom?.density} kg/m³</Value>
         </Row>
         <Row>
-          <Label>Melting point</Label>
-          <Value>{atom?.meltingPoint} K</Value>
+          <Label>Group</Label>
+          <Value>{atom?.groupBlock}</Value>
         </Row>
         <Row>
           <Label>Standard state</Label>
           <Value>{atom?.standardState}</Value>
         </Row>
+        <Row>
+          <Label>Melting point</Label>
+          <Value>{Number.parseFloat(atom?.meltingPoint ?? "") - 273.15} °C</Value>
+        </Row>
+        <Row>
+          <Label>Boiling point</Label>
+          <Value>{Number.parseFloat(atom?.boilingPoint ?? "") - 273.15} °C</Value>
+        </Row>
+        <Row>
+          <Label>Electronic configuration</Label>
+          <Value>{atom?.electronicConfiguration}</Value>
+        </Row>
+        <Row>
+          <Label>CPK (Corey–Pauling–Koltun) color</Label>
+          <CpkColor color={atom?.cpkHexColor ?? "000"} />
+        </Row>
+        <Row>
+          <Label>Year discovered</Label>
+          <Value>{atom?.yearDiscovered}</Value>
+        </Row>
+
       </DetailsRow>
     </DetailsContainer>
   );

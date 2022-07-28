@@ -4,14 +4,21 @@ export const TableContainer = styled.div`
   height: 100%;
   padding: 1em;
   overflow: scroll;
+  display: flex;
+  justify-content: center;
+`;
+
+export const TableContent = styled.div`
   position: relative;
 `;
+
 
 export const PeriodicSummary = styled.div`
   position: absolute;
   height: 10em;
   width: 30em;
   display: grid;
+  grid-auto-flow: row;
   grid-template-columns: 1fr 1fr;
   top: 1em;
   left: 14.5em;
