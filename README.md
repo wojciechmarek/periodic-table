@@ -1,10 +1,10 @@
 # Periodic Table
 
-A modern and clean periodic table of elements,
+A modern, clean, and tidy periodic table.
 
 ## Purpose
 
-To brush up my frontend skills 🔥 and learn CSS grid, emotion, react-query and NX.
+To brush up my frontend skills 🔥 and learn CSS grid, emotion, react-query, and NX.
 
 ## Demo
 
