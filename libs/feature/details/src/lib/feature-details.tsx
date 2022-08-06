@@ -65,6 +65,22 @@ export function Details(props: DetailsProps) {
           <Value>{atom?.electronicConfiguration}</Value>
         </Row>
         <Row>
+          <Label>Atomic radius</Label>
+          <Value>{atom?.atomicRadius}</Value>
+        </Row>
+        <Row>
+          <Label>Bonding type</Label>
+          <Value>{atom?.bondingType}</Value>
+        </Row>
+        <Row>
+          <Label>Electron affinity</Label>
+          <Value>{atom?.electronAffinity}</Value>
+        </Row>
+        <Row>
+          <Label>Ion radius</Label>
+          <Value>{atom?.ionRadius}</Value>
+        </Row>
+        <Row>
           <Label>CPK (Corey–Pauling–Koltun) color</Label>
           <CpkColor color={atom?.cpkHexColor ?? "000"} />
         </Row>

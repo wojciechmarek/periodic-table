@@ -9,5 +9,6 @@ export const atomGroupToColor = new Map([
   ['transition metal', '#EDF3E9'],
   ['actinide', '#B8E986'],
   ['lanthanoid', '#50E3C2'],
+  ['actinoid', '#F9F871'],
   ['metal', '#DDD9A0'],
 ]);

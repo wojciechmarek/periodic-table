@@ -10,20 +10,16 @@ import { useState } from 'react';
 export interface LayoutProps { }
 
 const LayoutContainer = styled.div`
-  height: 100vh;
   width: 100%;
   background: linear-gradient(135deg, #202B35 0%, #202C36 100%);
   display: flex;
   flex-direction: column;
 `;
 
-const LayoutMainContent = styled.div<{
-  isDetailsOpen: boolean;
-}>`
+const LayoutMainContent = styled.div`
   flex: 1;
   display: grid;
-  grid-template-columns: ${({ isDetailsOpen }) => isDetailsOpen ? '2fr 1fr' : '1fr'};
-  grid-gap: 1em;
+  justify-content: center;
 `;
 
 
@@ -35,6 +31,10 @@ export function Layout(props: LayoutProps) {
   const [selectedAtom, setSelectedAtom] = useState<Atom>();
 
   const handleOnAtomClick = (clickedAtom: Atom) => {
+    if (!clickedAtom) {
+      return;
+    }
+
     const foundAtom = periodicTableAtoms?.find((atom) => atom.symbol === clickedAtom.symbol);
     setSelectedAtom(foundAtom);
 
@@ -49,7 +49,7 @@ export function Layout(props: LayoutProps) {
   return (
     <LayoutContainer>
       <SearchBar />
-      <LayoutMainContent isDetailsOpen={isDetailsOpen}>
+      <LayoutMainContent>
         <Table atoms={periodicTableAtoms ?? []} handleOnAtomClick={handleOnAtomClick} />
         {isDetailsOpen && <Details atom={selectedAtom} handleOnCloseClick={handleOnCloseClick} />}
       </LayoutMainContent>

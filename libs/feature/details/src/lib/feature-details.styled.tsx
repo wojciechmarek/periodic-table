@@ -1,12 +1,14 @@
 import styled from "@emotion/styled";
 
 export const DetailsContainer = styled.div`
-  height: 100%;
-  width: 100%;
+  width: 40em;
   padding: 1em;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(19, 18, 24);
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 export const CloseButtonRow = styled.div`

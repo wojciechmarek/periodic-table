@@ -90,6 +90,18 @@ export const Atom = styled.div<{
   &.no-display {
     display: none;
   }
+
+  &.whole-row-space {
+    grid-column: 1 / span 18;
+  }
+
+  &.empty-cell-after {
+    grid-column: 2 / span 2;
+  }
+
+  &.extra-atoms-margin-left {
+    grid-column: 4;
+  }
 `;
 
 export const AtomNumber = styled.p`
