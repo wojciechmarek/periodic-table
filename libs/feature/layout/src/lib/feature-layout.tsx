@@ -5,6 +5,7 @@ import { SearchBar } from '@periodic-table/feature/search-bar';
 import { Table } from '@periodic-table/feature/table';
 import { Atom } from '@periodic-table/model';
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 /* eslint-disable-next-line */
 export interface LayoutProps { }
@@ -53,6 +54,7 @@ export function Layout(props: LayoutProps) {
         <Table atoms={periodicTableAtoms ?? []} handleOnAtomClick={handleOnAtomClick} />
         {isDetailsOpen && <Details atom={selectedAtom} handleOnCloseClick={handleOnCloseClick} />}
       </LayoutMainContent>
+      <Analytics />
     </LayoutContainer>
   );
 }
