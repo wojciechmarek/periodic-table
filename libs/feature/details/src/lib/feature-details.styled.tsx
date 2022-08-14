@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const DetailsContainer = styled.div`
+  height: 100vh;
   width: 40em;
   padding: 1em;
   display: flex;
@@ -9,6 +10,7 @@ export const DetailsContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  overflow-y: auto;
 `;
 
 export const CloseButtonRow = styled.div`

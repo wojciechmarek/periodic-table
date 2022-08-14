@@ -1,15 +1,20 @@
 import styled from "@emotion/styled";
+import { I } from "vitest/dist/types-198fd1d9";
 
 export const TableContainer = styled.div`
-  height: 100%;
   padding: 1em;
-  overflow: scroll;
+  height: calc(100vh - 3em);
+  overflow: auto;
   display: flex;
   justify-content: center;
+
+
 `;
 
 export const TableContent = styled.div`
   position: relative;
+  overflow-y: auto;
+  height: fit-content;
 `;
 
 
@@ -54,6 +59,13 @@ export const PeriodicTable = styled.div`
   grid-template-columns: repeat(18, 1fr);
   grid-template-rows: repeat(7, 1fr);
   width: min-content;
+`;
+
+
+export const LoadingText = styled.p`
+  color: #ffffff60;
+  font-size: 5rem;
+  font-weight: bold;
 `;
 
 export const Atom = styled.div<{

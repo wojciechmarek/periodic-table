@@ -12,18 +12,9 @@ export interface LayoutProps { }
 
 const LayoutContainer = styled.div`
   width: 100%;
+  height: 100vh;
   background: linear-gradient(135deg, #202B35 0%, #202C36 100%);
-  display: flex;
-  flex-direction: column;
 `;
-
-const LayoutMainContent = styled.div`
-  flex: 1;
-  display: grid;
-  justify-content: center;
-`;
-
-
 
 export function Layout(props: LayoutProps) {
   const { periodicTableAtoms } = usePeriodicTableApi();
@@ -50,10 +41,8 @@ export function Layout(props: LayoutProps) {
   return (
     <LayoutContainer>
       <SearchBar />
-      <LayoutMainContent>
-        <Table atoms={periodicTableAtoms ?? []} handleOnAtomClick={handleOnAtomClick} />
-        {isDetailsOpen && <Details atom={selectedAtom} handleOnCloseClick={handleOnCloseClick} />}
-      </LayoutMainContent>
+      <Table atoms={periodicTableAtoms} handleOnAtomClick={handleOnAtomClick} />
+      {isDetailsOpen && <Details atom={selectedAtom} handleOnCloseClick={handleOnCloseClick} />}
       <Analytics />
     </LayoutContainer>
   );
