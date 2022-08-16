@@ -5,7 +5,7 @@ export const atomGroupToColor = new Map([
   ['alkaline earth metal', '#f1beab'],
   ['metalloid', '#ABDEBC'],
   ['halogen', '#52A5C4'],
-  ['post-transition metal', '#886ff9'],
+  ['post-transition metal', '#e297a2'],
   ['transition metal', '#EDF3E9'],
   ['actinide', '#B8E986'],
   ['lanthanoid', '#50E3C2'],
